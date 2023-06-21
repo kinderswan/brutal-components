@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+@mixin apply-font {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: $brutal-px * 4;
+}

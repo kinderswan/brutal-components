@@ -1,0 +1,33 @@
+@use 'sass:math' as math;
+@use '../../theme/variables' as *;
+@use '../../theme/borders' as *;
+@use '../../theme/font' as *;
+
+brutal-button {
+  @include apply-font();
+  padding: 0px $brutal-px * 2;
+  justify-content: center;
+  width: fit-content;
+  display: flex;
+  height: fit-content;
+  @include brutal-border-hoverable();
+  &:focus-within {
+    border-style: dashed;
+  }
+  &[disabled] {
+    pointer-events: none;
+    border-color: $brutal-disabled-color;
+    color: $brutal-disabled-color;
+  }
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    @include brutal-padding();
+    @include brutal-form-control-height();
+  }
+}

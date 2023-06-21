@@ -1,0 +1,35 @@
+@use '../../theme/borders' as *;
+@use '../../theme/font' as *;
+@use '../../theme/variables' as *;
+
+
+brutal-input {
+  @include brutal-border();
+  display: flex;
+  width: fit-content;
+  &:focus-within {
+    border-style: dashed;
+  }
+  &[disabled] {
+    pointer-events: none;
+    border-color: $brutal-disabled-color;
+    color: $brutal-disabled-color;
+  }
+  &[type="hidden"] {
+    border: none
+  }
+  input {
+    display: flex;
+    border: none;
+    outline: none;
+    height: auto;
+    caret-color: red;
+    @include apply-font();
+    &::placeholder {
+      color: rgba(#000, 0.5);
+      font-style: italic;
+    }
+    @include brutal-padding();
+    @include brutal-form-control-height();
+  }
+}

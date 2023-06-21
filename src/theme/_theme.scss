@@ -1,0 +1,36 @@
+@use 'variables' as *;
+@use 'borders' as *;
+@use 'animations' as *;
+@use 'sass:math' as math;
+@forward 'variables';
+@forward 'fonts';
+@forward 'borders';
+
+:root {
+  min-width: 280px;
+  height: 100%;
+}
+
+
+input[brutal-input] {
+  height: auto;
+  caret-color: red;
+  @include brutal-border();
+  &::placeholder {
+    color: rgba(#000, 0.5);
+    font-style: italic;
+  }
+  &:focus {
+    border-style: dashed;
+  }
+}
+
+[class^='brutal-'] {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loader > * {
+  visibility: hidden;
+}

@@ -1,0 +1,32 @@
+@use '../../theme/borders' as *;
+@use '../../theme/font' as *;
+@use '../../theme/variables' as *;
+
+brutal-select {
+  padding: 0;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  @include brutal-border();
+  @include apply-font();
+  select {
+    padding: 0px 80px 0px 16px;;
+    @include apply-font();
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    @include brutal-form-control-height();
+    & {
+      appearance: none;
+      background: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z"/></svg>') 100% 50% no-repeat transparent;
+    }
+    option {
+      all: unset;
+      display: flex;
+    }
+  }
+}

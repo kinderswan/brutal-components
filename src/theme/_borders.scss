@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'sass:math' as math;
+
+@keyframes border-invert {
+  to {
+    filter: invert(100%);
+  }
+}
+
+@mixin brutal-border() {
+  border: math.div($brutal-px, 2) solid #000;
+  background-color: #fff;
+
+}
+
+@mixin brutal-border-bottom() {
+  border-bottom: math.div($brutal-px, 2) solid #000;
+}
+
+@mixin brutal-border-hoverable() {
+  @include brutal-border();
+  &:hover {
+    animation: border-invert 400ms;
+    animation-fill-mode: forwards;
+  }
+}

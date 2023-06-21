@@ -1,0 +1,22 @@
+@use 'sass:color' as col;
+
+$brutal-px: 8px;
+
+
+$brutal-primary-color: #000;
+$brutal-secondary-color: #fff;
+
+$brutal-disabled-color: col.adjust($brutal-primary-color, $lightness: 50%);
+
+
+@mixin brutal-padding() {
+  padding: 0;
+}
+
+@mixin brutal-form-control-height {
+  height: 40px;
+}
+
+@mixin brutal-form-control-width {
+  width: 40px;
+}
